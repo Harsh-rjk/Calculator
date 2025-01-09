@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <style>
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family:"poppins", sans-serif ;
+}
+.main{
+width: 100%;
+height: 100vh;
+position: relative;
+background-image: url("nature-3082832_1280.jpg");
+background-size: cover;
+background-position:center;
+background-repeat: no-repeat;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+.cal{
+    position: absolute;
+    background-color: rgba(5, 5, 5, 0.7);
+    width: 400px;
+    height: 500px;
+    border-radius: 15px;
+    padding: 15px;
+  
+    flex-wrap: wrap;
+  
+}
+.cal input{
+    height: 100px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    box-shadow: 2px 2px 4px rgb(102, 97, 86);
+    border-radius: 10px;
+    font-size: 50px;
+    color: aliceblue;
+   text-align: right;
+    padding-right: 20px;
+    padding-top: 50px;
+}
+.cal input::placeholder{
+    color: aliceblue;
+    font-size: 50px;
+    
+    float: right;
+}
+
+ button{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: rgb(29, 27, 27);
+    border: none;
+    box-shadow: -1px -1px 4px rgb(58, 53, 53);
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    margin-left: 15px;
+    margin-top: 15px;
+    
+
+}
+ .eq{
+    background-color: rgb(214, 90, 17);
+}
+ .green{
+  color: green;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+    <div class="cal"><input type="text" name="" id="input" placeholder="0" readonly>
+
+    <div ><button class="green"; >AC</button>
+        <button class="green";>DEL</button>
+        <button class="green"; class="green";>%</button>
+        <button class="green";>/</button></div>
+        <div ><button>7</ton/button>
+            <button>8</button>
+            <button>9</button>
+            <button class="green";>*</button></div>
+            <div ><button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button class="green";>-</button></div><div ><button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button class="green";>+</button></div><div ><button>00</button>
+                        <button>0</button>
+                        <button>.</button>
+                        <button class="eq" >=</button>
+                    </div>
+                </div>
+    
+    </div>
+    <script>
+        let display = document.querySelector("input");
+        let btn = document.querySelectorAll("button");
+
+         //let arr = Array.from(btn);
+
+        let string = "";
+        
+          
+        btn.forEach(h => {
+            h.addEventListener("click", (a) =>{
+                if (a.target.innerHTML == "DEL") {
+                    string = string.substring(0, string.length-1);
+                    input.value=string;
+                } else if (a.target.innerHTML == "AC") {
+                    string="";
+                    input.value=string;  
+                } else if (a.target.innerHTML == "="){
+                    string = eval(string);
+                    input.value=string; 
+                    console.log(string);
+                } else {
+                  
+                 string += a.target.innerHTML;
+                 input.value = string;
+                } 
+                
+                 
+                
+            })
+            
+        })
+       
+        console.log("Fu*king complete...!");
+        
+       // let arr = Array.from(buttons);
+
+       // let string = "harsjhqgiu";
+        
+       
+      
+      
+        
+    </script>
+</body>
+</html>
